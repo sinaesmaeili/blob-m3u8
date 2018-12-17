@@ -1,0 +1,20 @@
+{
+    "name": "blob-m3u8",
+    "version": "1.0",
+    "description": "Extract blob video urls to playable media m3u8 files",
+    "browser_action": {
+        "default_title": "blob-m3u8",
+        "default_popup": "src/popup.html"
+    },
+    "background": {
+        "scripts": ["src/background.js"]
+    },
+    "permissions": [
+        "http://*/*",
+        "https://*/*",
+        "webRequest",
+        "storage"
+
+    ],
+    "manifest_version": 2
+}
