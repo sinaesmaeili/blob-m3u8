@@ -1,3 +1,5 @@
+@import "../node_modules/tippy.js/dist/tippy.css";
+
 html {
     width: 300px;
 
@@ -20,6 +22,8 @@ ul {
 
 .container {
     display: flex;
+    flex-direction: column;
+    text-align: center;
     justify-content: center;
     margin: 10px;
 }
@@ -40,6 +44,11 @@ ul {
     text-overflow: ellipsis;
 }
 
+#content-list > li:hover {
+    cursor: pointer;
+    background-color: #bdc3c7;
+}
+
 .flex-nav {
     display: flex;
     flex-direction: row;
@@ -47,6 +56,15 @@ ul {
     padding: 10px 10px 10px 10px;
     margin: 0;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.fa-wind {
+    font-size: 50px;
+    color: #eeeeee;
+}
+
+.empty-para {
+    color: #dadfe1;
 }
 
 #clear-icon {
@@ -59,18 +77,6 @@ ul {
     cursor: pointer;
 }
 
-#sync {
-    outline: none;
-    height: 25px;
-    font-weight: 600;
-    font-size: 14px;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    width: 55%;
-    background-image: linear-gradient( 135deg, #FDD819 10%, #E80505 100%);
-}
-
-#sync:hover {
-    cursor: pointer;
+#nolinks {
+    display: none;    
 }
