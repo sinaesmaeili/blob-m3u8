@@ -7,7 +7,6 @@ clear.onclick = clearStorage;
 function searchHAR() {
     chrome.storage.local.get("urlObjects", (result) => {
         if (result.urlObjects.length != 0) {
-            chrome.extension.getBackgroundPage().console.log(result.urlObjects);
             document.getElementById("content-list").style.display = "block";
             
             for (x in result.urlObjects) {
