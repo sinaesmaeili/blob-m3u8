@@ -6,10 +6,12 @@
   "dependencies": {
     "tippy.js": "^3.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "browserify": "^16.2.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "browserify src/script.js -o src/bundle.js"
+    "bundle": "browserify src/chrome/script.js -o src/chrome/bundle.js"
   },
   "repository": {
     "type": "git",
