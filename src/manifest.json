@@ -4,7 +4,7 @@
     "description": "Extract blob video urls to playable media m3u8 files",
     "browser_action": {
         "default_title": "blob-m3u8",
-        "default_popup": "popup.html"
+        "default_popup": "chrome/popup.html"
     },
     "background": {
         "scripts": ["background.js"]
