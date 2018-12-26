@@ -7,11 +7,12 @@
     "tippy.js": "^3.3.0"
   },
   "devDependencies": {
-    "browserify": "^16.2.3"
+    "browserify": "^16.2.3",
+    "watchify": "^3.11.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "browserify src/chrome/script.js -o src/chrome/bundle.js"
+    "bundle": "watchify src/chrome/script.js -o src/chrome/bundle.js -v"  
   },
   "repository": {
     "type": "git",

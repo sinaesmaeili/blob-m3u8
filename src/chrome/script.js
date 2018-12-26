@@ -1,8 +1,8 @@
 const tippy = require("tippy.js");
 
+const background = chrome.extension.getBackgroundPage();
 const ul = document.getElementById("content-list");
 const clear = document.getElementById("clear-icon");
-clear.onclick = clearStorage;
 
 function searchHAR() {
     chrome.storage.local.get("urlObjects", (result) => {
@@ -27,14 +27,15 @@ function searchHAR() {
 }
 
 function clearStorage() {
-    chrome.storage.local.clear(() => {
+    chrome.storage.local.clear((obj) => {
         let error = chrome.runtime.lastError;
-        if (error) chrome.extension.getBackgroundPage().console.log(error);
+        if (error) background.console.log(error);
+        ul.innerHTML = '';
+        document.getElementById("nolinks").style.display = "block";
+        document.getElementById("content-list").style.display = "none";
+        chrome.storage.local.set({ "urlObjects": [] }, () => { });
+        background.urlObjects = [];
     });
-    ul.innerHTML = '';
-    document.getElementById("nolinks").style.display = "block";
-    document.getElementById("content-list").style.display = "none";
-    chrome.storage.local.set({ "urlObjects": [] }, () => { });
 }
 
 function copyStringToClipboard(str) {
@@ -50,4 +51,9 @@ function copyStringToClipboard(str) {
     }
 }
 
-searchHAR();
+async function asyncCall() {
+    await searchHAR();
+    clear.onclick = await clearStorage;
+}
+
+asyncCall();

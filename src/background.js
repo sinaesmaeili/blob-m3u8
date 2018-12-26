@@ -12,7 +12,7 @@ chrome.webRequest.onHeadersReceived.addListener((details) => {
 function createUrlObjects(details) {
     if (details.url.endsWith("m3u8") || details.url.includes("playlist.m3u8")) {
         let tempUrlObj = { "url": details.url };
-        urlObjects.push(tempUrlObj);
+        urlObjects.unshift(tempUrlObj);
         
         if (urlObjects.length > 5) urlObjects.pop();
     }
