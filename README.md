@@ -13,3 +13,8 @@ npm run bundle
 Take the `blob-m3u8/src/chrome` folder and "Load unpacked" in chrome extensions page
 
 Make sure to have `npm run bundle` while making changes to code so browserify can require the npm modules and `js` files in the browser
+
+## Screenshots
+
+<img src="screenshots/preview1.png"/>
+<img src="screenshots/preview2.png"/>
