@@ -16,5 +16,7 @@ Make sure to have `npm run bundle` while making changes to code so browserify ca
 
 ## Screenshots
 
-<img src="screenshots/preview1.png"/>
-<img src="screenshots/preview2.png"/>
+<span>
+  <img src="screenshots/preview1.png"/>
+  <img src="screenshots/preview2.png"/>
+</span>
